@@ -1,0 +1,6 @@
+services:
+  api:
+    image: demo02:2.0
+    build: .
+    ports:
+      - "3000:3000"

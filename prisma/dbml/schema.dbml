@@ -1,0 +1,24 @@
+//// ------------------------------------------------------
+//// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+//// ------------------------------------------------------
+
+Table Post {
+  id Int [pk, increment]
+  title String [not null]
+  content String [not null]
+  likesCount Int [not null, default: 0]
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+  comments Comment [not null]
+}
+
+Table Comment {
+  id Int [pk, increment]
+  content String [not null]
+  createdAt DateTime [default: `now()`, not null]
+  updatedAt DateTime [not null]
+  post Post [not null]
+  postId Int [not null]
+}
+
+Ref: Comment.postId > Post.id
